@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41F7ED24-771F-4C60-9552-8BE7214DDE23}</ProjectGuid>
+    <ProjectGuid>{CAA300B2-2A77-4351-90B3-0359366477C1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Training_Lab</RootNamespace>
-    <AssemblyName>Training Lab</AssemblyName>
+    <RootNamespace>VowelsSum</RootNamespace>
+    <AssemblyName>VowelsSum</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
