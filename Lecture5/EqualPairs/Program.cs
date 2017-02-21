@@ -10,56 +10,104 @@ namespace EqualPairs
     {
         static void Main(string[] args)
         {
-            //сумата, 
-            //минимума и 
-            //максимума на числата на четни и нечетни позиции (броим от 1). 
-            
             double number = double.Parse(Console.ReadLine());
-            double sumEven = 0.0;
-            double sumOdd = 0.0;
-            double maxEven = double.MinValue;
-            double minEven = double.MaxValue;
-            double maxOdd = double.MinValue;
-            double minOdd = double.MaxValue;
+            double EvenSum = 0.0;
+            double OddSum = 0.0;
+            double EvenMax = double.MinValue;
+            double EvenMin = double.MaxValue;
+            double OddMax = double.MinValue;
+            double OddMin = double.MaxValue;
 
             for (int i = 0; i < number; i++)
             {
                 if (i % 2 != 0)
                 {
                     double tempNumber = double.Parse(Console.ReadLine());
-                    if (tempNumber >= maxEven)
+                    if (tempNumber >= EvenMax)
                     {
-                        maxEven = tempNumber;
+                        EvenMax = tempNumber;
                     }
                     else
                     {
-                        minEven = tempNumber;
+                        EvenMin = tempNumber;
                     }
-                    sumEven += tempNumber;
+                    EvenSum += tempNumber;
                 }
                 else
                 {
                     double tempNumber = double.Parse(Console.ReadLine());
-                    if (tempNumber >= maxOdd)
+                    if (tempNumber >= OddMax)
                     {
-                        maxOdd = tempNumber;
+                        OddMax = tempNumber;
                     }
                     else
                     {
-                        minOdd = tempNumber;
+                        OddMin = tempNumber;
                     }
-                    sumOdd += tempNumber;
+                    OddSum += tempNumber;
                 }
             }
 
-            if (sumOdd != maxEven || sumEven != maxOdd)
+            if (OddMin == double.MaxValue)
             {
-                Console.WriteLine("OddSum={0},\r\nOddMin={1},\r\nOddMax={2},\r\nEvenSum={3},\r\nEvenMin={4},\r\nEvenMax={5}", sumOdd, minOdd, maxOdd, sumEven, minEven, maxEven);
+                OddMin = OddMax;
+            }
+            if (OddMax == double.MinValue)
+            {
+                OddMax = OddMin;
+            }
+            if (EvenMin == double.MaxValue)
+            {
+                EvenMin = EvenMax;
+            }
+            if (EvenMax == double.MinValue)
+            {
+                EvenMax = EvenMin;
+            }
+
+            StringBuilder builder = new StringBuilder();
+
+            builder.AppendLine(string.Format("OddSum={0},", OddSum));
+
+            if (OddMin != double.MaxValue)
+            {
+                builder.AppendLine(string.Format("OddMin={0},", OddMin));
             }
             else
             {
-                Console.WriteLine("OddSum={0},\r\nOddMin={1},\r\nOddMax={2},\r\nEvenSum={3},\r\nEvenMin={4},\r\nEvenMax={5}", sumOdd, minOdd, maxOdd, sumEven, minEven, maxEven);
+                builder.AppendLine(string.Format("OddMin={0},", "No"));
             }
+
+            if (OddMax != double.MinValue)
+            {
+                builder.AppendLine(string.Format("OddMax={0},", OddMax));
+            }
+            else
+            {
+                builder.AppendLine(string.Format("OddMax={0},", "No"));
+            }
+
+            builder.AppendLine(string.Format("EvenSum={0},", EvenSum));
+
+            if (EvenMin != double.MaxValue)
+            {
+                builder.AppendLine(string.Format("EvenMin={0},", EvenMin));
+            }
+            else
+            {
+                builder.AppendLine(string.Format("EvenMin={0},", "No"));
+            }
+
+            if (EvenMax != double.MinValue)
+            {
+                builder.AppendLine(string.Format("EvenMax={0}", EvenMax));
+            }
+            else
+            {
+                builder.AppendLine(string.Format("EvenMax={0}", "No"));
+            }
+
+            Console.WriteLine(builder.ToString());
         }
     }
 }
