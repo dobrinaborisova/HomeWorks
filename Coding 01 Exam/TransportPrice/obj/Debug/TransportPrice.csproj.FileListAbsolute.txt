@@ -1,0 +1,6 @@
+E:\GitHub\HomeWorks\Coding 01 Exam\TransportPrice\bin\Debug\TransportPrice.exe.config
+E:\GitHub\HomeWorks\Coding 01 Exam\TransportPrice\bin\Debug\TransportPrice.exe
+E:\GitHub\HomeWorks\Coding 01 Exam\TransportPrice\bin\Debug\TransportPrice.pdb
+E:\GitHub\HomeWorks\Coding 01 Exam\TransportPrice\obj\Debug\TransportPrice.csprojResolveAssemblyReference.cache
+E:\GitHub\HomeWorks\Coding 01 Exam\TransportPrice\obj\Debug\TransportPrice.exe
+E:\GitHub\HomeWorks\Coding 01 Exam\TransportPrice\obj\Debug\TransportPrice.pdb
