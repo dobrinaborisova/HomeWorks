@@ -18,7 +18,7 @@ namespace Diamand
                 for (int i = 1; i <= n; i++)
                 {
                     Console.Write(new string('_', n - i));
-                    Console.Write(string.Concat(Enumerable.Repeat("*", i)));
+                    Console.Write(string.Concat(Enumerable.Repeat("*_", i)));
                     Console.WriteLine(string.Concat(Enumerable.Repeat("_", n - i)));
 
                 }
@@ -41,7 +41,7 @@ namespace Diamand
                 for (int i = n - 1; i > 0; i--)
                 {
                     Console.Write(new string('-', n - i));
-                    Console.Write(string.Concat(Enumerable.Repeat("*-", i)));
+                    Console.Write(string.Concat(Enumerable.Repeat("*", i)));
                     Console.WriteLine(string.Concat(Enumerable.Repeat("-", n - i)));
                 }
             }
