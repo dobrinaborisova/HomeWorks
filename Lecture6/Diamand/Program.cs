@@ -11,39 +11,61 @@ namespace Diamand
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
+            string outerTirence = "";
+            string innetTirence = "";
+            string star = "";
+            int leftRight = (n - 1) / 2;
+            int mid = n - 2 * leftRight - 2;
 
-            if (n % 2 != 0)
+            if (n % 2 == 0)
             {
-
-                for (int i = 1; i <= n; i++)
-                {
-                    Console.Write(new string('_', n - i));
-                    Console.Write(string.Concat(Enumerable.Repeat("*_", i)));
-                    Console.WriteLine(string.Concat(Enumerable.Repeat("_", n - i)));
-
-                }
-                for (int i = n - 1; i > 0; i--)
-                {
-                    Console.Write(new string('_', n - i));
-                    Console.Write(string.Concat(Enumerable.Repeat("*_", i)));
-                    Console.WriteLine(string.Concat(Enumerable.Repeat("_", n - i)));
-                }
+                star = "**";
             }
             else
             {
-                for (int i = 1; i <= n; i++)
-                {
-                    Console.Write(new string('-', n - i));
-                    Console.Write(string.Concat(Enumerable.Repeat("*_", i)));
-                    Console.WriteLine(string.Concat(Enumerable.Repeat("-", n - i)));
+                star = "*";
+                mid = 1;
+                Console.WriteLine(new string('-', leftRight) + star + new string('-', leftRight));
+                leftRight--;
+            }
 
-                }
-                for (int i = n - 1; i > 0; i--)
+            int nCount = (n - 2) / 2;
+
+            for (int i = 0; i <= nCount; i++)
+            {
+                if (leftRight < 0)
                 {
-                    Console.Write(new string('-', n - i));
-                    Console.Write(string.Concat(Enumerable.Repeat("*", i)));
-                    Console.WriteLine(string.Concat(Enumerable.Repeat("-", n - i)));
+                    return;
                 }
+                outerTirence = new string('-', leftRight);
+                innetTirence = new string('-', mid);
+
+                Console.WriteLine(outerTirence + "*" + innetTirence + "*" + outerTirence);
+
+                if (i != nCount)
+                {
+                    leftRight--;
+                    mid += 2;
+                }
+            }
+
+            leftRight = 1;
+            mid -= 2;
+
+            for (int i = 0; i <= nCount - 1; i++)
+            {
+                outerTirence = new string('-', leftRight);
+                innetTirence = new string('-', mid);
+
+                Console.WriteLine(outerTirence + "*" + innetTirence + "*" + outerTirence);
+
+                leftRight++;
+                mid -= 2;
+            }
+
+            if (n % 2 != 0)
+            {
+                Console.WriteLine(new string('-', (n - 1) / 2) + star + new string('-', (n - 1) / 2));
             }
         }
     }
