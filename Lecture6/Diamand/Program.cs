@@ -12,7 +12,7 @@ namespace Diamand
         {
             int n = int.Parse(Console.ReadLine());
             string outerTirence = "";
-            string innetTirence = "";
+            string innerTirence = "";
             string star = "";
             int leftRight = (n - 1) / 2;
             int mid = n - 2 * leftRight - 2;
@@ -38,9 +38,9 @@ namespace Diamand
                     return;
                 }
                 outerTirence = new string('-', leftRight);
-                innetTirence = new string('-', mid);
+                innerTirence = new string('-', mid);
 
-                Console.WriteLine(outerTirence + "*" + innetTirence + "*" + outerTirence);
+                Console.WriteLine(outerTirence + "*" + innerTirence + "*" + outerTirence);
 
                 if (i != nCount)
                 {
@@ -55,9 +55,9 @@ namespace Diamand
             for (int i = 0; i <= nCount - 1; i++)
             {
                 outerTirence = new string('-', leftRight);
-                innetTirence = new string('-', mid);
+                innerTirence = new string('-', mid);
 
-                Console.WriteLine(outerTirence + "*" + innetTirence + "*" + outerTirence);
+                Console.WriteLine(outerTirence + "*" + innerTirence + "*" + outerTirence);
 
                 leftRight++;
                 mid -= 2;

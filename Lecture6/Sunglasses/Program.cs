@@ -19,7 +19,7 @@ namespace Sunglasses
             for (int i = 0; i < n - 2; i++)
             {
                 string middle;
-                if (i == ((n - 2) / 2))
+                if (i != ((n - 1) / 2) - 1)
                 {
                     middle = string.Concat(Enumerable.Repeat("*", 1).Concat(Enumerable.Repeat("/", 2 * n - 2).Concat(Enumerable.Repeat("*", 1).Concat(Enumerable.Repeat(" ", n).Concat(Enumerable.Repeat("*", 1).Concat(Enumerable.Repeat("/", 2 * n - 2).Concat(Enumerable.Repeat("*", 1))))))));
                 }
