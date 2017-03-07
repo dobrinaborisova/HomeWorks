@@ -11,13 +11,13 @@ namespace _08.Factorial
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
+            int fact = n;
 
-            for (int i = 1; i <= n; i= i*i)
+            for (int i = 1; i < n; i++)
             {
-
-                int fact = i ;
-                Console.WriteLine(fact);
+                fact = fact * i;            
             }
+            Console.WriteLine(fact);
         }
     }
 }
